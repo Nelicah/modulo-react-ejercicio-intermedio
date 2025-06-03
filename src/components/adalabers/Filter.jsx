@@ -1,4 +1,4 @@
-function Filter({ handleInputFilter }) {
+function Filter({ handleInputFilter, handleSelectFilter }) {
   return (
     <form className="formulario">
       <label>Nombre:</label>
@@ -8,10 +8,8 @@ function Filter({ handleInputFilter }) {
         placeholder="ej: MariCarmen"
       ></input>
       <label>Escoge una tutora:</label>
-      <select name="counselor">
-        <option selected disabled>
-          Cualquiera
-        </option>
+      <select onChange={handleSelectFilter} name="counselor">
+        <option value="p0">Cualquiera</option>
         <option value="p1">Yanelis</option>
         <option value="p2">Dayana</option>
         <option value="p3">Iván</option>
