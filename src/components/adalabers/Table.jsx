@@ -1,4 +1,4 @@
-function Table({ filteredAdalabers, filteredCounselor }) {
+function Table({ filteredAdalabers }) {
   return (
     <table className="table">
       {/* Fila de cabecera */}

@@ -5,7 +5,7 @@ import Filter from "./adalabers/Filter";
 import Table from "./adalabers/Table";
 
 function App() {
-  const [adalabers, setAdalabers] = useState(data.results);
+  const [adalabers] = useState(data.results);
   const [filteredName, setFilteredName] = useState("");
   const [filteredCounselorName, setFilteredCounselorName] = useState("");
 
