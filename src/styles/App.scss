@@ -6,5 +6,16 @@
 }
 
 .table-name {
-  margin-left: 10px;
+  padding-inline: 10px;
+}
+.table-tutora {
+  padding-inline: 10px;
+}
+.table-especialidad {
+  padding-inline: 10px;
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr;
 }

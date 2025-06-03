@@ -1,39 +1,29 @@
 import "../styles/App.scss";
 import data from "../data/adalabers.json";
 import { useState } from "react";
+import Filter from "./adalabers/Filter";
+import Table from "./adalabers/Table";
 
 function App() {
   const [adalabers, setAdalabers] = useState(data.results);
+  const [filteredName, setFilteredName] = useState("");
+
+  const handleInputFilter = (ev) => {
+    setFilteredName(ev.target.value);
+  };
+
+  const filteredAdalabers = adalabers.filter((eachAdalaber) =>
+    eachAdalaber.name.includes(filteredName)
+  );
+
   return (
     <>
       <header>
         <h1>Adalabers</h1>
       </header>
       <main>
-        <table className="table">
-          {/* Fila de cabecera */}
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Tutora</th>
-              <th>Especialidad</th>
-            </tr>
-          </thead>
-          {/*  Fin fila de cabecera  */}
-          <tbody>
-            {/* fila */}
-            {adalabers.map((adalaberObj) => (
-              <tr key={adalaberObj.id}>
-                <td className="table-name"> {adalaberObj.name}</td>
-                <td className="table-tutora">{adalaberObj.counselor}</td>
-                <td className="table-especialidad">
-                  {" "}
-                  {adalaberObj.speciality}{" "}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <Filter handleInputFilter={handleInputFilter} />
+        <Table filteredAdalabers={filteredAdalabers} />
       </main>
     </>
   );
