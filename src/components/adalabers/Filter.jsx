@@ -8,11 +8,11 @@ function Filter({ handleInputFilter, handleSelectFilter }) {
         placeholder="ej: MariCarmen"
       ></input>
       <label>Escoge una tutora:</label>
-      <select onChange={handleSelectFilter} name="counselor">
-        <option value="p0">Cualquiera</option>
-        <option value="p1">Yanelis</option>
-        <option value="p2">Dayana</option>
-        <option value="p3">Iván</option>
+      <select onInput={handleSelectFilter} name="counselor">
+        <option value="Cualquiera">Cualquiera</option>
+        <option value="Yanelis">Yanelis</option>
+        <option value="Dayana">Dayana</option>
+        <option value="Iván">Iván</option>
       </select>
     </form>
   );

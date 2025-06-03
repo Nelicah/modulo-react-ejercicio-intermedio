@@ -16,13 +16,11 @@ function App() {
     setFilteredCounselorName(ev.target.value);
   };
 
-  const filteredAdalabers = adalabers.filter((eachAdalaber) =>
-    eachAdalaber.name.includes(filteredName)
-  );
-
-  const filteredCounselor = adalabers.filter((eachAdalaber) =>
-    eachAdalaber.counselor.includes(filteredCounselorName)
-  );
+  const filteredAdalabers = adalabers
+    .filter((eachAdalaber) => eachAdalaber.name.includes(filteredName))
+    .filter((eachAdalaber) =>
+      eachAdalaber.counselor.includes(filteredCounselorName)
+    );
 
   return (
     <>
@@ -34,10 +32,7 @@ function App() {
           handleInputFilter={handleInputFilter}
           handleSelectFilter={handleSelectFilter}
         />
-        <Table
-          filteredAdalabers={filteredAdalabers}
-          filteredCounselor={filteredCounselor}
-        />
+        <Table filteredAdalabers={filteredAdalabers} />
       </main>
     </>
   );
